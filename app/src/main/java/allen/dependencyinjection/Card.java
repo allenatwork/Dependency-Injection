@@ -2,12 +2,40 @@ package allen.dependencyinjection;
 
 import allen.dependencyinjection.imlement.Database;
 import allen.dependencyinjection.imlement.EmailSender;
+import allen.dependencyinjection.imlement.IDatabase;
+import allen.dependencyinjection.imlement.IEmailSender;
+import allen.dependencyinjection.imlement.ILogger;
 import allen.dependencyinjection.imlement.Logger;
 
 /**
  * Created by Allen on 26-Sep-16.
  */
 public class Card {
+    private IDatabase database;
+    private IEmailSender emailSender;
+    private ILogger iLogger;
+
+
+    // constructor DI
+    public Card(IDatabase database, IEmailSender emailSender, ILogger iLogger) {
+        this.database = database;
+        this.emailSender = emailSender;
+        this.iLogger = iLogger;
+    }
+
+    // Setter DI
+    public void setDatabase(IDatabase database) {
+        this.database = database;
+    }
+
+    public void setEmailSender(IEmailSender emailSender) {
+        this.emailSender = emailSender;
+    }
+
+    public void setiLogger(ILogger iLogger) {
+        this.iLogger = iLogger;
+    }
+
     public void checkout(int orderId, int userId) {
         Database db = new Database();
         db.save(orderId);
