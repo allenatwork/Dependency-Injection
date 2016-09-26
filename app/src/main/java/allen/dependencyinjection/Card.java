@@ -16,6 +16,9 @@ public class Card {
     private ILogger iLogger;
 
 
+    public Card() {
+    }
+
     // constructor DI
     public Card(IDatabase database, IEmailSender emailSender, ILogger iLogger) {
         this.database = database;
