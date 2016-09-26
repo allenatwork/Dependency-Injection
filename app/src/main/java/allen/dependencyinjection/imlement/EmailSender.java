@@ -1,5 +1,7 @@
 package allen.dependencyinjection.imlement;
 
+import allen.dependencyinjection.itf.IEmailSender;
+
 /**
  * Created by Allen on 26-Sep-16.
  */

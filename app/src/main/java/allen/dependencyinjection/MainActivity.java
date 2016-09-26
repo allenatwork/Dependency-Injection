@@ -1,26 +1,19 @@
 package allen.dependencyinjection;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import allen.dependencyinjection.imlement.Database;
-import allen.dependencyinjection.imlement.EmailSender;
-import allen.dependencyinjection.imlement.Logger;
+import allen.dependencyinjection.container.CardContainer;
 
 public class MainActivity extends AppCompatActivity {
+    Card card;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        setupCard();
+        CardContainer cardContainer = new CardContainer();
+        card = cardContainer.createCard();
     }
 
-    private void setupCard() {
-        Card card = new Card();
-        card.setDatabase(new Database());
-        card.setEmailSender(new EmailSender());
-        card.setiLogger(new Logger());
-    }
 }

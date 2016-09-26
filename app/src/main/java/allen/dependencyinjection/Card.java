@@ -2,9 +2,9 @@ package allen.dependencyinjection;
 
 import allen.dependencyinjection.imlement.Database;
 import allen.dependencyinjection.imlement.EmailSender;
-import allen.dependencyinjection.imlement.IDatabase;
-import allen.dependencyinjection.imlement.IEmailSender;
-import allen.dependencyinjection.imlement.ILogger;
+import allen.dependencyinjection.itf.IDatabase;
+import allen.dependencyinjection.itf.IEmailSender;
+import allen.dependencyinjection.itf.ILogger;
 import allen.dependencyinjection.imlement.Logger;
 
 /**
